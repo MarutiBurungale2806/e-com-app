@@ -12,7 +12,11 @@ const path = require('path');
 const app = express();
 // app.use(express.json())
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors({
+    origin: ["https://e-com-app-rose.vercel.app"],
+    methods: ["POST","GET","DELETE","PUT"],
+    credentials: true
+}))
 
 app.post("/register", async (req, res) => {
     let user = new User(req.body)
@@ -113,4 +117,6 @@ app.put("/update-product/:id", async (req, res) => {
 
 })
 
-app.listen(3500);
+app.listen(3500,()=>{
+    console.log("server is running")
+});
