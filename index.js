@@ -36,14 +36,14 @@ app.post("/login", async (req, res) => {
 
 })
 
-const storage = multer.diskStorage({
-    destination: './uploads/',
-    filename: (req, file, callback) => {
-        callback(null, Date.now() + path.extname(file.originalname));
-    },
-});
+// const storage = multer.diskStorage({
+//     destination: './uploads/',
+//     filename: (req, file, callback) => {
+//         callback(null, Date.now() + path.extname(file.originalname));
+//     },
+// });
 
-const upload = multer({ storage });
+// const upload = multer({ storage });
 
 app.post('/add-products', async (req, res) => {
     const { brand, country, founded, userId, image } = req.body;
