@@ -117,6 +117,6 @@ app.put("/update-product/:id", async (req, res) => {
 
 })
 
-app.listen(3500,()=>{
-    console.log("server is running")
-});
+// app.listen(3500,()=>{
+//     console.log("server is running")
+// });
