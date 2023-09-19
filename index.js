@@ -18,6 +18,10 @@ app.use(cors({
     credentials: true
 }))
 
+app.get("/", async (req, res) => {
+    res.send("Hello");
+})
+
 app.post("/register", async (req, res) => {
     let user = new User(req.body)
     let result = await user.save();
